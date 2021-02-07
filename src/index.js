@@ -9,16 +9,16 @@ function App() {
   const [result, setResult] = useState(0)
 
   const addHandler = () => {
-    setResult(Number(input1) + Number(input2))
+    setResult((input1) + (input2))
   }
   const subtractHandler = () => {
-    setResult(Number(input1) - Number(input2))
+    setResult(input1 - input2)
   }
   const multiplyHandler = () => {
-    setResult(Number(input1) * Number(input2))
+    setResult(input1 * input2)
   }
   const divideHandler = () => {
-    setResult(Number(input1) / Number(input2))
+    setResult((input1) / (input2))
   }
 
   return (
@@ -26,8 +26,8 @@ function App() {
       <h1>Adding Two Numbers</h1>
 
       <div className="number-inputs">
-        <input key={1} type="number" placeholder="0" onChange={(event) => setInput1(event.target.value)} />
-        <input key={2} type="number" placeholder="0" onChange={(event) => setInput2(event.target.value)} />
+        <input key={1} type="number" placeholder="0" onChange={(event) => setInput1(+event.target.value)} />
+        <input key={2} type="number" placeholder="0" onChange={(event) => setInput2(+event.target.value)} />
       </div>
 
       <button onClick={() => addHandler()}>Add Them!</button>
